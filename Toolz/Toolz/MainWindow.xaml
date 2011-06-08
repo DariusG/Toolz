@@ -1,8 +1,17 @@
 ﻿<Window x:Class="Toolz.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Toolz" Height="350" Width="525" WindowStyle="SingleBorderWindow">
     <Grid>
-        
+        <Menu Height="23" HorizontalAlignment="Stretch" Name="menu1" VerticalAlignment="Top" HorizontalContentAlignment="Center" BorderThickness="0" Background="#FFE5E5E5">
+            <MenuItem Header="File">
+                <MenuItem Header="Exit" Click="MenuItem_Click" />
+            </MenuItem>
+            <MenuItem Header="Strings" />
+            <MenuItem Header="Help">
+                <MenuItem Header="How To .." />
+                <MenuItem Header="About" />
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>
