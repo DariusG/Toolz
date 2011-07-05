@@ -1,0 +1,1 @@
+This is a codeplex project for coding tidbits
