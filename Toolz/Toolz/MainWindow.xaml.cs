@@ -95,9 +95,13 @@ namespace Toolz
             //ManagementObjectSearcher Searcher = new System.Management.ManagementObjectSearcher(Query);
             //ManagementObject ManageObject = new System.Management.ManagementObject();
             textBox3.Text = GetProcessorID();
-            label1.Content = GetProcessorID();
+            label1.Content = GetProcessorID() + "\n" + GetMotherboard_BaseBoard_ID() + "\n" + GetdiskDrive_ID();
         }
 
+        /// <summary>
+        /// Retrieves the current processor id (need to be careful of multiple procesors ! unique)
+        /// </summary>
+        /// <returns></returns>
         public static string GetProcessorID()
         {
             var processorID = "";
@@ -112,8 +116,48 @@ namespace Toolz
             }
 
             return processorID;
-        } 
+        }         
+      
+        /// <summary>
+        /// Retrieves the current motherboard serial
+        /// </summary>
+        /// <returns></returns>
+        public static string GetMotherboard_BaseBoard_ID()
+        {
 
+            var motherboard_Base_board_ID = "";
+            var query = "SELECT SerialNumber FROM Win32_BaseBoard";
 
+            var oManagementObjectSearcher = new ManagementObjectSearcher(query);
+
+            foreach (var oManagementObject in oManagementObjectSearcher.Get())
+            {
+                motherboard_Base_board_ID = (string)oManagementObject["SerialNumber"];
+                break;
+            }
+
+            return motherboard_Base_board_ID;
+        }        
+        
+        /// <summary>
+        /// Retrieves the current diskdrive serial running windows upon
+        /// </summary>
+        /// <returns></returns>
+        public static string GetdiskDrive_ID()
+        {
+
+            var diskdrive_ID = "";
+            var query = "SELECT SerialNumber FROM Win32_DiskDrive";
+
+            var oManagementObjectSearcher = new ManagementObjectSearcher(query);
+
+            foreach (var oManagementObject in oManagementObjectSearcher.Get())
+            {
+                diskdrive_ID = (string)oManagementObject["SerialNumber"];
+                break;
+            }
+
+            return diskdrive_ID;
+        }
     }
 }
