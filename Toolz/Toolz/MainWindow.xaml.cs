@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -158,6 +159,30 @@ namespace Toolz
             }
 
             return diskdrive_ID;
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Check the ping of the web address provided
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            string url = "www.bbc.co.uk";
+            Ping ping_address = new Ping();
+            PingReply pingReply = ping_address.Send(url, 5);
+            if (pingReply.Status == IPStatus.Success)
+            {
+                MessageBox.Show("Alive");
+            }else
+            {
+                MessageBox.Show("Timed out");
+            }
         }
     }
 }
