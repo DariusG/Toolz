@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolz", "Toolz\Toolz.csproj", "{DEAE9965-D775-4D5C-9C3C-384D5A6C6258}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolzWin32", "ToolzWin32\ToolzWin32.csproj", "{33E277B7-33C2-4E72-B02A-EC9E929CD389}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{DEAE9965-D775-4D5C-9C3C-384D5A6C6258}.Debug|x86.Build.0 = Debug|x86
 		{DEAE9965-D775-4D5C-9C3C-384D5A6C6258}.Release|x86.ActiveCfg = Release|x86
 		{DEAE9965-D775-4D5C-9C3C-384D5A6C6258}.Release|x86.Build.0 = Release|x86
+		{33E277B7-33C2-4E72-B02A-EC9E929CD389}.Debug|x86.ActiveCfg = Debug|x86
+		{33E277B7-33C2-4E72-B02A-EC9E929CD389}.Debug|x86.Build.0 = Debug|x86
+		{33E277B7-33C2-4E72-B02A-EC9E929CD389}.Release|x86.ActiveCfg = Release|x86
+		{33E277B7-33C2-4E72-B02A-EC9E929CD389}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
