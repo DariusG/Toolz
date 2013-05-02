@@ -136,6 +136,28 @@ namespace ToolzWin32
         {
             Show();
             WindowState = FormWindowState.Normal;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBox1.DataSource = ComputerStats(); 
+        }
+
+        private static List<string> ComputerStats()
+        {
+            List<string> computerINFO = new List<string>();
+            computerINFO.Add("Logical Drives on PC: " + string.Join(" | ", Environment.GetLogicalDrives().Select(x => x)));
+            computerINFO.Add(Environment.CurrentDirectory);
+            computerINFO.Add("Is Operating System x64: " + Environment.Is64BitOperatingSystem);
+            computerINFO.Add("Machine Name: " + Environment.MachineName);
+            computerINFO.Add("OS: " + Environment.OSVersion);
+            computerINFO.Add("Processor Count: " + Environment.ProcessorCount);
+            computerINFO.Add("Domain Name: " + Environment.UserDomainName);
+            computerINFO.Add("User Name: " + Environment.UserName);
+            computerINFO.Add(".Net CLR Version: " + Environment.Version);
+            computerINFO.Add("UI Culture (Installed): " + System.Globalization.CultureInfo.InstalledUICulture);
+            computerINFO.Add("UI Culture (Current): " + System.Globalization.CultureInfo.CurrentUICulture);
+            return computerINFO;
         } 
     }
 }
