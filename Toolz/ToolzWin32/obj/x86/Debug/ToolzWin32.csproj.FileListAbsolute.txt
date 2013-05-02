@@ -7,3 +7,11 @@ C:\Users\Darius\Desktop\toolz\Toolz\ToolzWin32\obj\x86\Debug\GenerateResource.re
 C:\Users\Darius\Desktop\toolz\Toolz\ToolzWin32\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Darius\Desktop\toolz\Toolz\ToolzWin32\obj\x86\Debug\ToolzWin32.exe
 C:\Users\Darius\Desktop\toolz\Toolz\ToolzWin32\obj\x86\Debug\ToolzWin32.pdb
+C:\Users\dev\Desktop\Toolz\Toolz\ToolzWin32\obj\x86\Debug\ToolzWin32.exe
+C:\Users\dev\Desktop\Toolz\Toolz\ToolzWin32\obj\x86\Debug\ToolzWin32.pdb
+C:\Users\dev\Desktop\Toolz\Toolz\ToolzWin32\bin\Debug\ToolzWin32.exe
+C:\Users\dev\Desktop\Toolz\Toolz\ToolzWin32\bin\Debug\ToolzWin32.pdb
+C:\Users\dev\Desktop\Toolz\Toolz\ToolzWin32\obj\x86\Debug\ToolzWin32.csprojResolveAssemblyReference.cache
+C:\Users\dev\Desktop\Toolz\Toolz\ToolzWin32\obj\x86\Debug\ToolzWin32.Form1.resources
+C:\Users\dev\Desktop\Toolz\Toolz\ToolzWin32\obj\x86\Debug\ToolzWin32.Properties.Resources.resources
+C:\Users\dev\Desktop\Toolz\Toolz\ToolzWin32\obj\x86\Debug\ToolzWin32.csproj.GenerateResource.Cache

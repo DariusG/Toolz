@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -52,5 +53,89 @@ namespace ToolzWin32
                 toolStripStatusLabel1.Text = "Internet Connected: NO";
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            CheckIfRunning();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            Application.ExitThread();           
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                Hide();
+            }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (Process.GetProcessesByName("ToolzWin32").Count() > 1)
+            {
+                DialogResult dr = MessageBox.Show("Already Running", "ToolzWin32.exe is running", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
+                {
+                    seletabletoclose = false;
+                    e.Cancel = true;
+                    base.OnFormClosing(e);
+                    Application.ExitThread();
+                }
+            }
+            else
+            {
+                if (seletabletoclose)
+                {
+                    e.Cancel = false;
+                }
+                else
+                {
+                    this.Hide();
+                    e.Cancel = true;
+                }
+                base.OnFormClosing(e);
+            }
+        }
+
+        bool seletabletoclose;
+
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (e.ClickedItem.Name.Equals("showToolStripMenuItem"))
+            {
+                Show();
+                WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                seletabletoclose = true;
+            }
+        }
+
+        private void CheckIfRunning()
+        {
+            if (Process.GetProcessesByName("ToolzWin32").Count() > 1)
+            {
+                seletabletoclose = false;
+                Application.Exit();
+                Application.ExitThread();
+            }
+        }
+
+        private void showToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        } 
     }
 }
