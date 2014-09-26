@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity name="TimeFun.exe" version="1.0.0.0" publicKeyToken="0a0e5b39eefe8167" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Resources\SandTIme.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="TimeFun" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="TimeFun.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TimeFun.exe" size="900608">
+      <assemblyIdentity name="TimeFun" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>6J1OoYYjhh/ZeXiGLN8762gGA38=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Resources\SandTIme.ico" size="139258">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>utrADiW7iNvVpQkJvxnNiQJw8p8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=VM-64-DG\dev" issuerKeyHash="c64f253c3f35d8f08838078439bc6dec22374616" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>+GrJdCyBS5iorWZzGJsquO6kDU8=</DigestValue></Reference></SignedInfo><SignatureValue>JvgnO4C4t1y5Hl4ljul/I/8DV3DGYGiLBCp4e58SpiTgWaQliqrXAeMOJWf+BIsa713XsDCD0m/zS3aWIWSoK+xZfvAwQRhJwUrIuS8U0+IWQMk7no58jI0kZN2Y/ils93/dY+q4Tv5kfBno5/IV+pwXyx1E77rGbPwoQWOXTgs=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sf5pPA5t+QxLfgqB5N9fBxbay7bfqHYZAo7leKaP3L38MKrNwZJpnQ7ppOOTZj5Gdd/jj5iPajAiwWIMe15oXdzr8ooNhMM64upz2oFwYNENUNw4IBDUJe3ftGffd816Wk1VCESJX1+KGWQwjcYvGEsDpYAm4ifVYaa7e7Z1qY0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="4f0da4eeb82a9b187366ada8984b812c74c96af8" Description="" Url=""><as:assemblyIdentity name="TimeFun.exe" version="1.0.0.0" publicKeyToken="0a0e5b39eefe8167" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=VM-64-DG\dev</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>pYqHmVQWAmNkr3LlkhzB+jDiwr0=</DigestValue></Reference></SignedInfo><SignatureValue>HOqqQJ3XsOC/K7a2+dKC/YGkX6Kui9yFkNsOqBM1uCGo+4pAj2UcZplAp4Rqd/hbzpINcqCYxRdv20uGGC5cKY0dEzL1RxaniWM1F0EJENcQT79IkcWIFvcJVPZ0yYoZbGKLgQvktdH4lpi0Vk1Xqq0UOzsamcfB27VVPa5soBM=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sf5pPA5t+QxLfgqB5N9fBxbay7bfqHYZAo7leKaP3L38MKrNwZJpnQ7ppOOTZj5Gdd/jj5iPajAiwWIMe15oXdzr8ooNhMM64upz2oFwYNENUNw4IBDUJe3ftGffd816Wk1VCESJX1+KGWQwjcYvGEsDpYAm4ifVYaa7e7Z1qY0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQdmb22JptTb5BOde5KT8pEDANBgkqhkiG9w0BAQUFADAjMSEwHwYDVQQDHhgAVgBNAC0ANgA0AC0ARABHAFwAZABlAHYwHhcNMTMwNjEzMTYzMTUwWhcNMTQwNjEzMjIzMTUwWjAjMSEwHwYDVQQDHhgAVgBNAC0ANgA0AC0ARABHAFwAZABlAHYwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALH+aTwObfkMS34KgeTfXwcW2su236h2GQKO5Ximj9y9/DCqzcGSaZ0O6aTjk2Y+RnXf44+Yj2owIsFiDHteaF3c6/KKDYTDOuLqc9qBcGDRDVDcOCAQ1CXt37Rn33fNelpNVQhEiV9fihlkMI3GLxhLA6WAJuIn1WGmu3u2damNAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAlqMmTZfTH2b4LbdJf1bK1SzfacUaebeTOt9g1BeWHzTZdMwny7ns+T7u0Kq65aIhwBthh2UMQwEVLD3aH+z3IQzcm53/3JbskYklpoaGgztiQxsNAHST8LrN2aW5klh0OAqn0Hwv/xpnJBvfSCmN4ZO5lCAOn7nBxfGM/DlXzO8=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
