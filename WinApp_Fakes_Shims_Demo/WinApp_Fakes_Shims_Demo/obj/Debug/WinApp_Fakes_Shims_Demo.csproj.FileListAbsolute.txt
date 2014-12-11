@@ -1,0 +1,11 @@
+C:\Users\dev\Documents\Visual Studio 2012\Projects\WinApp_Fakes_Shims_Demo\WinApp_Fakes_Shims_Demo\obj\Debug\WinApp_Fakes_Shims_Demo.csprojResolveAssemblyReference.cache
+C:\Users\dev\Documents\Visual Studio 2012\Projects\WinApp_Fakes_Shims_Demo\WinApp_Fakes_Shims_Demo\obj\Debug\WinApp_Fakes_Shims_Demo.Form1.resources
+C:\Users\dev\Documents\Visual Studio 2012\Projects\WinApp_Fakes_Shims_Demo\WinApp_Fakes_Shims_Demo\obj\Debug\WinApp_Fakes_Shims_Demo.Properties.Resources.resources
+C:\Users\dev\Documents\Visual Studio 2012\Projects\WinApp_Fakes_Shims_Demo\WinApp_Fakes_Shims_Demo\obj\Debug\WinApp_Fakes_Shims_Demo.csproj.GenerateResource.Cache
+C:\Users\dev\Documents\Visual Studio 2012\Projects\WinApp_Fakes_Shims_Demo\WinApp_Fakes_Shims_Demo\bin\Debug\WinApp_Fakes_Shims_Demo.exe
+C:\Users\dev\Documents\Visual Studio 2012\Projects\WinApp_Fakes_Shims_Demo\WinApp_Fakes_Shims_Demo\bin\Debug\WinApp_Fakes_Shims_Demo.pdb
+C:\Users\dev\Documents\Visual Studio 2012\Projects\WinApp_Fakes_Shims_Demo\WinApp_Fakes_Shims_Demo\obj\Debug\WinApp_Fakes_Shims_Demo.exe
+C:\Users\dev\Documents\Visual Studio 2012\Projects\WinApp_Fakes_Shims_Demo\WinApp_Fakes_Shims_Demo\obj\Debug\WinApp_Fakes_Shims_Demo.pdb
+C:\Users\dev\Documents\Visual Studio 2012\Projects\WinApp_Fakes_Shims_Demo\WinApp_Fakes_Shims_Demo\bin\Debug\WinApp_Fakes_Shims_Demo.exe.config
+C:\Users\dev\Documents\Visual Studio 2012\Projects\WinApp_Fakes_Shims_Demo\WinApp_Fakes_Shims_Demo\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\dev\Documents\Visual Studio 2012\Projects\WinApp_Fakes_Shims_Demo\WinApp_Fakes_Shims_Demo\bin\Debug\System.Threading.Tasks.Dataflow.xml
