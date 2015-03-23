@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 
@@ -12,10 +8,10 @@ namespace TimeFun
 {
     public partial class Form1 : Form
     {
-        public int seconds; // Seconds.
-        public int minutes; // Minutes.
-        public int hours;   // Hours.
-        public bool paused; // State of the timer [PAUSED/WORKING].
+        public int Seconds; // Seconds.
+        public int Minutes; // Minutes.
+        public int Hours;   // Hours.
+        public bool Paused; // State of the timer [PAUSED/WORKING].
 
         public Form1()
         {
@@ -24,7 +20,7 @@ namespace TimeFun
 
         private void btn_Start_Countdown_Click(object sender, EventArgs e)
         {
-            if (paused != true)
+            if (Paused != true)
             {
                 if ((textBox1.Text != "") && (textBox2.Text != "") && (textBox3.Text != ""))
                 {
@@ -39,9 +35,9 @@ namespace TimeFun
 
                     try
                     {
-                        minutes = System.Convert.ToInt32(textBox2.Text);
-                        seconds = System.Convert.ToInt32(textBox3.Text);
-                        hours = System.Convert.ToInt32(textBox1.Text);
+                        Minutes = Convert.ToInt32(textBox2.Text);
+                        Seconds = Convert.ToInt32(textBox3.Text);
+                        Hours = Convert.ToInt32(textBox1.Text);
                     }
                     catch (Exception ex)
                     {
@@ -50,13 +46,13 @@ namespace TimeFun
                 }
                 else
                 {
-                    MessageBox.Show("Incomplete settings!");
+                    MessageBox.Show(@"Incomplete settings!");
                 }
             }
             else
             {
                 tmrCountdown.Enabled = true;
-                paused = false;
+                Paused = false;
                 btn_Start_Countdown.Enabled = false;
                 btn_Pause_Countdown.Enabled = true;
             }
@@ -65,7 +61,7 @@ namespace TimeFun
         private void tmrCountdown_Tick(object sender, EventArgs e)
         {
             // Verify if the time didn't pass.
-            if ((minutes == 0) && (hours == 0) && (seconds == 0))
+            if ((Minutes == 0) && (Hours == 0) && (Seconds == 0))
             {
                 // If the time is over, clear all settings and fields.
                 // Also, show the message, notifying that the time is over.
@@ -82,35 +78,35 @@ namespace TimeFun
                 textBox3.Enabled = true;
                 textBox2.Enabled = true;
                 textBox1.Enabled = true;
-                lblHr.Text = "00";
-                lblMin.Text = "00";
-                lblSec.Text = "00";
+                lblHr.Text = @"00";
+                lblMin.Text = @"00";
+                lblSec.Text = @"00";
             }
             else
             {
                 // Else continue counting.
-                if (seconds < 1)
+                if (Seconds < 1)
                 {
-                    seconds = 59;
-                    if (minutes == 0)
+                    Seconds = 59;
+                    if (Minutes == 0)
                     {
-                        minutes = 59;
-                        if (hours != 0)
-                            hours -= 1;
+                        Minutes = 59;
+                        if (Hours != 0)
+                            Hours -= 1;
 
                     }
                     else
                     {
-                        minutes -= 1;
+                        Minutes -= 1;
                     }
                 }
                 else
-                    seconds -= 1;
+                    Seconds -= 1;
                 // Display the current values of hours, minutes and seconds in
                 // the corresponding fields.
-                lblHr.Text = hours.ToString();
-                lblMin.Text = minutes.ToString();
-                lblSec.Text = seconds.ToString();
+                lblHr.Text = Hours.ToString(CultureInfo.InvariantCulture);
+                lblMin.Text = Minutes.ToString(CultureInfo.InvariantCulture);
+                lblSec.Text = Seconds.ToString(CultureInfo.InvariantCulture);
             }
         }
 
@@ -118,7 +114,7 @@ namespace TimeFun
         {
             // Pause the timer.
             tmrCountdown.Enabled = false;
-            paused = true;
+            Paused = true;
             btn_Pause_Countdown.Enabled = false;
             btn_Start_Countdown.Enabled = true;
         }
@@ -126,7 +122,7 @@ namespace TimeFun
         private void btn_Stop_Countdown_Click(object sender, EventArgs e)
         {
             // Stop the timer.
-            paused = false;
+            Paused = false;
             tmrCountdown.Enabled = false;
             btn_Pause_Countdown.Enabled = false;
             btn_Stop_Countdown.Enabled = false;
@@ -140,9 +136,9 @@ namespace TimeFun
             textBox3.Enabled = true;
             textBox2.Enabled = true;
             textBox1.Enabled = true;
-            lblHr.Text = "00";
-            lblMin.Text = "00";
-            lblSec.Text = "00";
+            lblHr.Text = @"00";
+            lblMin.Text = @"00";
+            lblSec.Text = @"00";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -161,13 +157,13 @@ namespace TimeFun
             string alarm =  dateTimePicker1.Text;
             string currentTime = tmp.Hours + ":" + tmp.Minutes + ":" + tmp.Seconds;
 
-            Console.WriteLine("Alarm Time => " + alarm);
-            Console.WriteLine("Clock Time => " + currentTime);
+            Console.WriteLine(@"Alarm Time => {0}", alarm);
+            Console.WriteLine(@"Clock Time => {0}", currentTime);
 
             if (alarm.Equals(currentTime))
             {
                 timerAlarm1.Enabled = false;
-                MessageBox.Show("!!!! Alarm Reached !!!!");
+                MessageBox.Show(@"!!!! Alarm Reached !!!!");
             }
         }
 
@@ -192,10 +188,10 @@ namespace TimeFun
         {
             if (Process.GetProcessesByName("TimeFun").Count() > 1)
             {
-                DialogResult dr = MessageBox.Show("Already Running", "TimeFun.exe is running", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DialogResult dr = MessageBox.Show(@"Already Running", @"TimeFun.exe is running", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 if (dr == DialogResult.OK)
                 {
-                    seletabletoclose = false;
+                    _seletabletoclose = false;
                     e.Cancel = true;
                     base.OnFormClosing(e);
                     Application.ExitThread();
@@ -203,20 +199,20 @@ namespace TimeFun
             }
             else
             {
-                if (seletabletoclose)
+                if (_seletabletoclose)
                 {
                     e.Cancel = false;
                 }
                 else
                 {
-                    this.Hide();
+                    Hide();
                     e.Cancel = true;
                 }
                 base.OnFormClosing(e);
             }
         }
 
-        bool seletabletoclose;
+        bool _seletabletoclose;
 
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -227,7 +223,7 @@ namespace TimeFun
             }
             else
             {
-                seletabletoclose = true;
+                _seletabletoclose = true;
             }
         }
 
@@ -235,7 +231,7 @@ namespace TimeFun
         {
             if (Process.GetProcessesByName("TimeFun").Count() > 1)
             {
-                seletabletoclose = false;
+                _seletabletoclose = false;
 //                Form1.ActiveForm.Close();
                 Application.Exit();
             }
@@ -248,7 +244,7 @@ namespace TimeFun
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutBox1 aboutBx = new AboutBox1();
+            var aboutBx = new AboutBox1();
             aboutBx.ShowDialog();
         }  
     }
